@@ -8,6 +8,7 @@ Lab 4 Part 1: QR code generator
 */
 import { input } from "@inquirer/prompts";
 import QRCode from "qrcode";
+import { appendFile } from "node:fs/promises";
 const url = await input({
   message: "Which website should the QR code point to?",
   validate: function (value) {
@@ -22,3 +23,5 @@ console.log("You typed:", url);
 const filename = new URL(url).hostname + ".png";
 await QRCode.toFile(filename, url);
 console.log("Saved", filename);
+await appendFile("urls.txt", url + "\n");
+console.log("Added it to urls.txt");
