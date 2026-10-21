@@ -19,5 +19,6 @@ const url = await input({
 });
 
 console.log("You typed:", url);
-await QRCode.toFile("qr.png", url);
-console.log("Saved qr.png");
+const filename = new URL(url).hostname + ".png";
+await QRCode.toFile(filename, url);
+console.log("Saved", filename);
