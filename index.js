@@ -9,7 +9,13 @@ Lab 4 Part 1: QR code generator
 import { input } from "@inquirer/prompts";
 import QRCode from "qrcode";
 const url = await input({
-  message: "Which website should the QR code point to?"
+  message: "Which website should the QR code point to?",
+  validate: function (value) {
+    if (URL.canParse(value)) {
+      return true;
+    }
+    return "Type the whole address, starting with https://";
+  },
 });
 
 console.log("You typed:", url);
