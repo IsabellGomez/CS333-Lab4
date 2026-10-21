@@ -14,6 +14,8 @@ Every step gives you the code. Type it in (typing it is how it sticks), run it, 
 
 This lab runs **on your computer**. Our `lampforall` server only hands out the files you upload; it can't run Node programs. **Question 1**: Why can't our lampforall run Node?
 
+--lampforall serves website files but does not run Node.js programs for this lab. Node runs on my own computer.
+
 **Stuck on Monday?** Look at the **Stuck?** table at the bottom first. Then post in the Slack lab thread: (1) the command you ran, (2) the **exact** error, copied and pasted, (3) what you already tried. Helping a classmate counts too.
 
 ---
@@ -47,6 +49,8 @@ You should see something like `v22.11.0` or higher. If you see "command not foun
 
 **Question 2:** what version do you have?
 
+-- v24.22.0
+
 ## 3. Try Node by itself
 
 Type `node` and press Enter. The prompt changes to `>`. Now Node runs each line you type:
@@ -61,6 +65,8 @@ Type `.exit` to leave.
 
 **Question 3:** `document` worked in the browser's Console. What happens here, and why do you think that is?
 
+
+-- I got an error because document only works in the browser environment
 ## 4. Your first Node program
 
 Make a practice folder and open it:
@@ -91,6 +97,8 @@ node --watch index.js
 ```
 
 **Question 4:** What does the `--watch` flag do?
+
+-- lets you edit the code and see live updat
 
 **TODO:** change the message and save. It runs again by itself. Press **Ctrl+C** to stop it.
 
@@ -129,6 +137,10 @@ Run it with `node index.js`. A new `message.txt` appears in your folder. Open it
 
 **Question 5:** what is the error code? (It's a word in capitals.)
 
+
+--EN0ENT
+
+
 **TODO 2:** fix the crash with `try` / `catch`, the same as last Wednesday. Replace the last two lines with:
 
 ```js
@@ -143,6 +155,10 @@ try {
 Run it again: a friendly message instead of a crash.
 
 **Question 6:** How does try/catch in js work with await? Just describe the above example in your own words.
+
+
+-- try runs the code that might cause an error. If await readFile() fails, catch handles the error and prints the error code instead of crashing the program.
+
 
 ## 7. You'll see older code too
 
@@ -172,10 +188,12 @@ There are two popular QR code packages. Look each one up on [npmjs.com](https://
 
 | | `qr-image` | `qrcode` |
 | --- | --- | --- |
-| Weekly downloads | | |
-| Last published (look on the right side of the page) | | |
+| Weekly downloads |87,378|12,828,066
+| Last published (look on the right side of the page) |10 years ago | 2 years ago|
 
 **Question 8:** which would you pick for a project you had to look after for years, and why? (We'll use `qrcode`.)
+
+-- I would choose qrcode because it has more weekly downloads and has been updated more recently, which makes me more confident that it is actively maintained. 
 
 ## 9. The QR code generator
 
