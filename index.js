@@ -7,9 +7,11 @@ Lab 4 Part 1: QR code generator
 4. Tell the user it worked.
 */
 import { input } from "@inquirer/prompts";
-
+import QRCode from "qrcode";
 const url = await input({
   message: "Which website should the QR code point to?"
 });
 
 console.log("You typed:", url);
+await QRCode.toFile("qr.png", url);
+console.log("Saved qr.png");
