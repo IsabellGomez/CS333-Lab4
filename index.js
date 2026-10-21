@@ -25,3 +25,9 @@ await QRCode.toFile(filename, url);
 console.log("Saved", filename);
 await appendFile("urls.txt", url + "\n");
 console.log("Added it to urls.txt");
+const picture = await QRCode.toString(url, {
+  type: "terminal",
+  small: true
+});
+
+console.log(picture);
